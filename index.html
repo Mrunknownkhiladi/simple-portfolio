@@ -123,10 +123,13 @@
 
 		@media (orientation: portrait) and (max-width: 768px) {
 			.page {
+				justify-content: flex-start !important;
+				align-content: start !important;
 				min-height: auto !important;
 				height: auto !important;
-				padding: 0 0 0.5rem !important;
-				margin-top: -2.5rem !important;
+				padding: 0 !important;
+				margin: 0 !important;
+				gap: 0 !important;
 			}
 		}
 
@@ -134,15 +137,18 @@
 			.page {
 				min-height: auto;
 				padding: 0 0 0.3rem !important;
+				justify-content: flex-start !important;
 			}
 		}
 
 		@media (orientation: portrait) {
 			.page {
+				justify-content: flex-start !important;
 				min-height: auto !important;
 				height: auto !important;
-				padding-top: 0 !important;
-				margin-top: -2rem !important;
+				padding: 0 !important;
+				margin: 0 !important;
+				gap: 0 !important;
 			}
 		}
 
@@ -214,16 +220,22 @@
 		@media (orientation: portrait) and (max-height: 600px) {
 			header {
 				position: static !important;
-				padding: 0 !important;
-				margin-bottom: -1.5rem !important;
+				padding: 0.25rem 0.5rem !important;
+				margin: 0 !important;
 				gap: 0.1rem !important;
+				min-height: 30px !important;
 			}
 		}
 
 		@media (orientation: portrait) {
 			header {
-				margin-bottom: -1.2rem !important;
-				padding: 0 !important;
+				margin: 0 !important;
+				padding: 0.3rem 0.5rem !important;
+				gap: 0.1rem !important;
+				position: static !important;
+				transform: none !important;
+				width: 100% !important;
+				min-height: auto !important;
 			}
 		}
 
@@ -376,8 +388,8 @@
 		@media (orientation: portrait) and (max-height: 600px) {
 			main {
 				gap: 0 !important;
-				margin-top: -2rem !important;
-				padding: 0 !important;
+				margin: 0 !important;
+				padding: 0.2rem 0.5rem !important;
 				align-content: start;
 			}
 		}
@@ -385,8 +397,8 @@
 		@media (orientation: portrait) {
 			main {
 				gap: 0 !important;
-				margin-top: -1.8rem !important;
-				padding: 0 !important;
+				margin: 0 !important;
+				padding: 0.2rem 0.5rem !important;
 				align-content: start;
 			}
 		}
@@ -408,8 +420,8 @@
 			.name {
 				margin: 0 !important;
 				padding: 0 !important;
-				line-height: 0.9 !important;
-				margin-bottom: -0.5rem !important;
+				line-height: 0.8 !important;
+				font-size: clamp(2.5rem, 14vw, 5rem) !important;
 			}
 		}
 
@@ -427,10 +439,12 @@
 
 		@media (orientation: portrait) {
 			.meta {
-				line-height: 1 !important;
+				line-height: 0.9 !important;
 				margin: 0 !important;
 				padding: 0 !important;
-				margin-top: -1rem !important;
+				font-size: clamp(0.8rem, 2.5vw, 1.2rem) !important;
+				max-width: 100%;
+				justify-self: start;
 			}
 		}
 
