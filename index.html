@@ -121,36 +121,18 @@
 			z-index: 1;
 		}
 
-		@media (max-width: 1200px) {
+		@media (orientation: portrait) and (max-width: 768px) {
 			.page {
-				padding: 5rem 0 2rem;
-			}
-		}
-
-		@media (max-width: 992px) {
-			.page {
-				padding: 2rem 0 1rem !important;
-			}
-		}
-
-		@media (max-width: 768px) {
-			.page {
-				padding: 0.1rem 0 0.5rem !important;
-				margin-top: -0.5rem !important;
-			}
-		}
-
-		@media (max-width: 700px) {
-			.page {
-				padding: 0 0 0.4rem !important;
-				margin-top: -0.8rem !important;
-			}
-		}
-
-		@media (max-width: 420px) {
-			.page {
-				padding: 0 0 0.3rem !important;
+				min-height: auto;
+				padding: 0 0 0.5rem !important;
 				margin-top: -1rem !important;
+			}
+		}
+
+		@media (orientation: landscape) and (max-width: 768px) {
+			.page {
+				min-height: auto;
+				padding: 0 0 0.3rem !important;
 			}
 		}
 
@@ -216,6 +198,15 @@
 				padding: 0.1rem 0 !important;
 				gap: 0.25rem !important;
 				margin-bottom: -0.4rem !important;
+			}
+		}
+
+		@media (orientation: portrait) and (max-height: 600px) {
+			header {
+				position: static !important;
+				padding: 0 !important;
+				margin-bottom: -1.2rem !important;
+				gap: 0.1rem !important;
 			}
 		}
 
@@ -365,6 +356,14 @@
 			}
 		}
 
+		@media (orientation: portrait) and (max-height: 600px) {
+			main {
+				gap: 0.1rem !important;
+				margin-top: -1.2rem !important;
+				padding: 0 !important;
+			}
+		}
+
 		.name {
 			font-weight: 500;
 			line-height: 0.95;
@@ -386,6 +385,13 @@
 			animation: revealUp 920ms 160ms ease both;
 		}
 
+		@media (orientation: portrait) and (max-height: 600px) {
+			.meta {
+				line-height: 1;
+				margin-top: -0.8rem !important;
+			}
+		}
+
 		.meta strong {
 			font-weight: 500;
 			text-decoration: underline;
@@ -398,6 +404,12 @@
 			font-size: clamp(1rem, 0.5vw + 0.92rem, 1.25rem);
 			color: #6d1e13;
 			letter-spacing: 0.02em;
+		}
+
+		@media (orientation: portrait) and (max-height: 600px) {
+			.seo-tagline {
+				margin-top: -2.4rem !important;
+			}
 		}
 
 		#role-word {
