@@ -244,6 +244,29 @@
 			justify-self: start;
 		}
 
+		.brand-full {
+			display: inline;
+		}
+
+		.brand-short {
+			display: none;
+		}
+
+		@media (max-width: 768px) {
+			.brand-full {
+				display: none;
+			}
+
+			.brand-short {
+				display: inline;
+				font-size: 0.85rem;
+			}
+
+			.brand {
+				font-size: 0.85rem;
+			}
+		}
+
 		nav ul {
 			list-style: none;
 			display: flex;
@@ -316,6 +339,29 @@
 			gap: 0.8rem;
 			transition: transform 240ms ease, filter 240ms ease;
 			border-radius: 4px;
+		}
+
+		@media (max-width: 768px) {
+			.download-cv {
+				font-size: 0.65rem;
+				padding: 0.4rem 0.6rem;
+				gap: 0.3rem;
+				min-width: auto;
+			}
+		}
+
+		@media (max-width: 700px) {
+			.download-cv {
+				font-size: 0.6rem;
+				padding: 0.3rem 0.5rem;
+			}
+		}
+
+		@media (max-width: 420px) {
+			.download-cv {
+				font-size: 0.55rem;
+				padding: 0.25rem 0.4rem;
+			}
 		}
 
 		.download-cv:hover {
@@ -1376,7 +1422,10 @@
 
 	<div class="page section-anchor" id="home">
 		<header>
-			<div class="brand">Auraportoflowabhay.</div>
+			<div class="brand">
+				<span class="brand-full">Auraportoflowabhay.</span>
+				<span class="brand-short">Aura.</span>
+			</div>
 
 			<nav aria-label="Main navigation">
 				<ul>
