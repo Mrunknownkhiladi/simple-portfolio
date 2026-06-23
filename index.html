@@ -981,19 +981,21 @@
 			body.header-frozen header,
 			body.header-white header {
 				position: static;
-				padding: 1rem 0;
+				padding: 0.5rem 0;
 				box-shadow: none;
 				background: transparent;
 				width: 100%;
 			}
 
 			.page {
-				padding-top: 2rem;
+				padding-top: 0.5rem;
+				padding-bottom: 1rem;
 			}
 
 			main {
 				align-content: start;
-				padding-top: 1rem;
+				padding-top: 0;
+				gap: 1rem;
 			}
 
 			.name {
@@ -1032,11 +1034,30 @@
 			}
 		}
 
+		@media (max-width: 768px) {
+			.page {
+				padding-top: 0.2rem !important;
+				padding-bottom: 0.8rem !important;
+			}
+
+			header {
+				position: static !important;
+				transform: none !important;
+				padding: 0.3rem 0 !important;
+				width: 100% !important;
+			}
+
+			main {
+				padding-top: 0 !important;
+				gap: 0.8rem !important;
+			}
+		}
+
 		@media (max-width: 700px) {
 			.page {
 				width: min(95vw, 540px);
-				padding-top: 0.3rem;
-				padding-bottom: 1rem;
+				padding-top: 0.2rem !important;
+				padding-bottom: 0.8rem !important;
 			}
 
 			header {
@@ -1158,10 +1179,10 @@
 		@media (max-width: 420px) {
 			.page {
 				width: 100%;
-				padding-left: 0.6rem;
-				padding-right: 0.6rem;
-				padding-top: 0.2rem;
-				padding-bottom: 0.8rem;
+				padding-left: 0.5rem !important;
+				padding-right: 0.5rem !important;
+				padding-top: 0.1rem !important;
+				padding-bottom: 0.6rem !important;
 			}
 
 			header {
@@ -1169,28 +1190,25 @@
 				transform: none !important;
 				width: 100% !important;
 				left: auto !important;
-				padding: 0.3rem 0 !important;
-				gap: 0.4rem;
-			}
-
-			.brand {
-				font-size: 1rem;
-			}
-
-			.name {
-				font-size: clamp(1.6rem, 11vw, 3rem);
-				margin-bottom: -0.6rem;
-				line-height: 0.85;
-			}
-
-			.meta {
-				font-size: 0.8rem;
-				line-height: 1.2;
+				padding: 0.25rem 0 !important;
+				gap: 0.3rem !important;
 			}
 
 			main {
-				gap: 0.6rem;
-				padding: 0.1rem 0;
+				gap: 0.5rem !important;
+				padding: 0 !important;
+			}
+
+			.name {
+				font-size: clamp(1.5rem, 10vw, 2.8rem);
+				margin-bottom: -0.7rem;
+				line-height: 0.8;
+			}
+
+			.meta {
+				font-size: 0.75rem;
+				line-height: 1.15;
+				margin-top: 0 !important;
 			}
 
 			.about-section,
