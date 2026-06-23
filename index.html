@@ -413,6 +413,57 @@
 			filter: brightness(1.08);
 		}
 
+		.education-header-wrapper {
+			display: flex;
+			align-items: flex-start;
+			justify-content: space-between;
+			gap: 1.5rem;
+		}
+
+		.download-btn-small {
+			border: 1px solid var(--ink);
+			background: transparent;
+			color: var(--ink);
+			font-family: inherit;
+			font-size: 0.85rem;
+			padding: 0.5rem 1rem;
+			cursor: pointer;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			gap: 0.4rem;
+			transition: all 240ms ease;
+			border-radius: 4px;
+			white-space: nowrap;
+			flex-shrink: 0;
+		}
+
+		.download-btn-small:hover {
+			background: var(--ink);
+			color: var(--bg);
+			transform: translateY(-1px);
+		}
+
+		@media (max-width: 768px) {
+			.education-header-wrapper {
+				flex-direction: column;
+				align-items: flex-start;
+				gap: 1rem;
+			}
+
+			.download-btn-small {
+				font-size: 0.75rem;
+				padding: 0.4rem 0.8rem;
+			}
+		}
+
+		@media (max-width: 420px) {
+			.download-btn-small {
+				font-size: 0.7rem;
+				padding: 0.35rem 0.7rem;
+			}
+		}
+
 		main {
 			display: grid;
 			align-content: center;
@@ -1519,11 +1570,14 @@
 	<section class="education-section section-anchor" id="education" aria-label="Education section">
 		<div class="section-top scroll-reveal">
 			<div class="section-kicker">Academic Journey</div>
-			<div>
-				<h2 class="section-heading">Education</h2>
-				<p class="section-summary">
-					My academic path combines software, applied technology, and engineering fundamentals across school, diploma, and university study.
-				</p>
+			<div class="education-header-wrapper">
+				<div>
+					<h2 class="section-heading">Education</h2>
+					<p class="section-summary">
+						My academic path combines software, applied technology, and engineering fundamentals across school, diploma, and university study.
+					</p>
+				</div>
+				<button class="download-btn-small" aria-label="Download CV from education section">↓ CV</button>
 			</div>
 		</div>
 
@@ -1970,6 +2024,23 @@
 				document.body.removeChild(link);
 			});
 		}
+
+		// Download CV buttons in sections
+		const downloadBtnSmall = document.querySelectorAll(".download-btn-small");
+		downloadBtnSmall.forEach(btn => {
+			btn.addEventListener("click", () => {
+				const cvUrl = "./cv.pdf";
+				
+				const link = document.createElement("a");
+				link.href = cvUrl;
+				link.download = "AbhayRaj-CV.pdf";
+				link.style.display = "none";
+				
+				document.body.appendChild(link);
+				link.click();
+				document.body.removeChild(link);
+			});
+		});
 
 		// Disable selection and copy interactions site-wide.
 		document.addEventListener("copy", (event) => event.preventDefault());
