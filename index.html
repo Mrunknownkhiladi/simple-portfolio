@@ -123,13 +123,10 @@
 
 		@media (orientation: portrait) and (max-width: 768px) {
 			.page {
-				justify-content: flex-start !important;
-				align-content: start !important;
-				min-height: auto !important;
-				height: auto !important;
-				padding: 0 !important;
-				margin: 0 !important;
-				gap: 0 !important;
+				min-height: auto;
+				height: auto;
+				padding: 0 1rem 1rem 1rem !important;
+				margin: 0 auto;
 			}
 		}
 
@@ -137,18 +134,6 @@
 			.page {
 				min-height: auto;
 				padding: 0 0 0.3rem !important;
-				justify-content: flex-start !important;
-			}
-		}
-
-		@media (orientation: portrait) {
-			.page {
-				justify-content: flex-start !important;
-				min-height: auto !important;
-				height: auto !important;
-				padding: 0 !important;
-				margin: 0 !important;
-				gap: 0 !important;
 			}
 		}
 
@@ -220,22 +205,22 @@
 		@media (orientation: portrait) and (max-height: 600px) {
 			header {
 				position: static !important;
-				padding: 0.25rem 0.5rem !important;
-				margin: 0 !important;
-				gap: 0.1rem !important;
-				min-height: 30px !important;
+				transform: none !important;
+				width: 100% !important;
+				padding: 0.3rem 0 !important;
+				gap: 0.2rem !important;
+				margin-bottom: 0.2rem !important;
 			}
 		}
 
 		@media (orientation: portrait) {
 			header {
-				margin: 0 !important;
-				padding: 0.3rem 0.5rem !important;
-				gap: 0.1rem !important;
 				position: static !important;
 				transform: none !important;
 				width: 100% !important;
-				min-height: auto !important;
+				padding: 0.4rem 0 !important;
+				gap: 0.3rem !important;
+				margin-bottom: 0.5rem !important;
 			}
 		}
 
@@ -257,6 +242,12 @@
 			justify-self: start;
 		}
 
+		@media (orientation: portrait) {
+			.brand {
+				font-size: clamp(0.95rem, 2.2vw, 1.3rem);
+			}
+		}
+
 		nav ul {
 			list-style: none;
 			display: flex;
@@ -272,6 +263,13 @@
 			transition: opacity 160ms ease;
 			position: relative;
 			padding-bottom: 0.6rem;
+		}
+
+		@media (orientation: portrait) {
+			nav a {
+				font-size: clamp(0.7rem, 1.8vw, 0.95rem);
+				padding-bottom: 0.2rem;
+			}
 		}
 
 		nav a:hover {
@@ -308,6 +306,15 @@
 			justify-content: center;
 			gap: 1rem;
 			transition: transform 240ms ease, filter 240ms ease;
+		}
+
+		@media (orientation: portrait) {
+			.cta {
+				font-size: clamp(0.8rem, 1.8vw, 1rem);
+				padding: 0.6rem 1rem;
+				min-width: auto;
+				gap: 0.5rem;
+			}
 		}
 
 		.cta:hover {
@@ -387,18 +394,18 @@
 
 		@media (orientation: portrait) and (max-height: 600px) {
 			main {
-				gap: 0 !important;
+				gap: 0.5rem !important;
 				margin: 0 !important;
-				padding: 0.2rem 0.5rem !important;
+				padding: 0.5rem 0 !important;
 				align-content: start;
 			}
 		}
 
 		@media (orientation: portrait) {
 			main {
-				gap: 0 !important;
+				gap: 0.8rem !important;
 				margin: 0 !important;
-				padding: 0.2rem 0.5rem !important;
+				padding: 0.8rem 0 !important;
 				align-content: start;
 			}
 		}
@@ -412,16 +419,13 @@
 			text-transform: uppercase;
 			color: var(--ink);
 			animation: revealUp 920ms ease both;
-			margin: 0 !important;
-			padding: 0 !important;
 		}
 
 		@media (orientation: portrait) {
 			.name {
+				font-size: clamp(3rem, 12vw, 5rem) !important;
+				line-height: 0.85 !important;
 				margin: 0 !important;
-				padding: 0 !important;
-				line-height: 0.8 !important;
-				font-size: clamp(2.5rem, 14vw, 5rem) !important;
 			}
 		}
 
@@ -433,18 +437,15 @@
 			line-height: 1.3;
 			max-width: min(44vw, 760px);
 			animation: revealUp 920ms 160ms ease both;
-			margin: 0 !important;
-			padding: 0 !important;
 		}
 
 		@media (orientation: portrait) {
 			.meta {
-				line-height: 0.9 !important;
-				margin: 0 !important;
-				padding: 0 !important;
-				font-size: clamp(0.8rem, 2.5vw, 1.2rem) !important;
-				max-width: 100%;
 				justify-self: start;
+				font-size: clamp(0.95rem, 2.8vw, 1.4rem) !important;
+				line-height: 1.2 !important;
+				max-width: 100%;
+				margin: 0 !important;
 			}
 		}
 
