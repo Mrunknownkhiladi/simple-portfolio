@@ -201,12 +201,13 @@
 				padding: 0.2rem 0 !important;
 				gap: 0.4rem !important;
 				margin-bottom: 0 !important;
+				position: relative;
 			}
 		}
 
 		@media (max-width: 700px) {
 			header {
-				position: static !important;
+				position: relative;
 				transform: none !important;
 				width: 100% !important;
 				padding: 0.15rem 0 !important;
@@ -217,7 +218,7 @@
 
 		@media (max-width: 420px) {
 			header {
-				position: static !important;
+				position: relative;
 				transform: none !important;
 				width: 100% !important;
 				padding: 0.1rem 0 !important;
@@ -304,6 +305,29 @@
 			justify-self: end;
 		}
 
+		@media (max-width: 768px) {
+			.cta-wrap {
+				position: absolute;
+				top: 0.3rem;
+				right: 0.5rem;
+				justify-self: auto;
+			}
+		}
+
+		@media (max-width: 700px) {
+			.cta-wrap {
+				top: 0.25rem;
+				right: 0.4rem;
+			}
+		}
+
+		@media (max-width: 420px) {
+			.cta-wrap {
+				top: 0.2rem;
+				right: 0.3rem;
+			}
+		}
+
 		.cta {
 			border: 0;
 			background: var(--button-bg);
@@ -343,24 +367,44 @@
 
 		@media (max-width: 768px) {
 			.download-cv {
-				font-size: 0.65rem;
-				padding: 0.4rem 0.6rem;
-				gap: 0.3rem;
-				min-width: auto;
+				width: 32px;
+				height: 32px;
+				min-width: 32px;
+				min-height: 32px;
+				padding: 0;
+				border-radius: 50%;
+				font-size: 0;
+				gap: 0;
+			}
+
+			.download-cv span {
+				font-size: 1.2rem;
 			}
 		}
 
 		@media (max-width: 700px) {
 			.download-cv {
-				font-size: 0.6rem;
-				padding: 0.3rem 0.5rem;
+				width: 28px;
+				height: 28px;
+				min-width: 28px;
+				min-height: 28px;
+			}
+
+			.download-cv span {
+				font-size: 1rem;
 			}
 		}
 
 		@media (max-width: 420px) {
 			.download-cv {
-				font-size: 0.55rem;
-				padding: 0.25rem 0.4rem;
+				width: 26px;
+				height: 26px;
+				min-width: 26px;
+				min-height: 26px;
+			}
+
+			.download-cv span {
+				font-size: 0.9rem;
 			}
 		}
 
