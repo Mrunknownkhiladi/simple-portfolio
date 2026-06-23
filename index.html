@@ -125,7 +125,7 @@
 			.page {
 				min-height: auto;
 				padding: 0 0 0.5rem !important;
-				margin-top: -1rem !important;
+				margin-top: -2.5rem !important;
 			}
 		}
 
@@ -133,6 +133,13 @@
 			.page {
 				min-height: auto;
 				padding: 0 0 0.3rem !important;
+			}
+		}
+
+		@media (orientation: portrait) {
+			.page {
+				padding-top: 0 !important;
+				margin-top: -2rem !important;
 			}
 		}
 
@@ -205,8 +212,15 @@
 			header {
 				position: static !important;
 				padding: 0 !important;
-				margin-bottom: -1.2rem !important;
+				margin-bottom: -1.5rem !important;
 				gap: 0.1rem !important;
+			}
+		}
+
+		@media (orientation: portrait) {
+			header {
+				margin-bottom: -1.2rem !important;
+				padding: 0 !important;
 			}
 		}
 
@@ -359,7 +373,15 @@
 		@media (orientation: portrait) and (max-height: 600px) {
 			main {
 				gap: 0.1rem !important;
-				margin-top: -1.2rem !important;
+				margin-top: -1.8rem !important;
+				padding: 0 !important;
+			}
+		}
+
+		@media (orientation: portrait) {
+			main {
+				gap: 0 !important;
+				margin-top: -1.5rem !important;
 				padding: 0 !important;
 			}
 		}
