@@ -815,6 +815,177 @@
 			background: #f0f0f0;
 		}
 
+		.contact-direct-section {
+			width: min(1850px, 98vw);
+			margin: 0 auto 2.8rem;
+			padding: clamp(2.4rem, 4vw, 4.3rem) clamp(1.5rem, 5vw, 9rem);
+			background: linear-gradient(135deg, #f5ebbf 0%, #efe2a4 52%, #ebdb95 100%);
+		}
+
+		.contact-direct-container {
+			max-width: 1200px;
+			margin: 0 auto;
+		}
+
+		.contact-direct-header {
+			text-align: center;
+			margin-bottom: 3rem;
+		}
+
+		.contact-direct-header h2 {
+			font-size: clamp(1.8rem, 3vw, 2.8rem);
+			color: var(--ink);
+			margin-bottom: 0.8rem;
+			font-weight: 700;
+		}
+
+		.contact-direct-header p {
+			font-size: 1.1rem;
+			color: #7f3023;
+		}
+
+		.contact-direct-content {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 3rem;
+			align-items: start;
+		}
+
+		.contact-direct-info,
+		.contact-direct-social {
+			background: white;
+			padding: 2rem;
+			border-radius: 8px;
+			box-shadow: 0 4px 12px rgba(125, 0, 0, 0.08);
+		}
+
+		.contact-direct-info h3,
+		.contact-direct-social h3 {
+			font-size: 1.4rem;
+			color: var(--ink);
+			margin-bottom: 1.5rem;
+			font-weight: 600;
+		}
+
+		.contact-item {
+			display: flex;
+			flex-direction: column;
+			gap: 0.4rem;
+			margin-bottom: 1.2rem;
+		}
+
+		.contact-label {
+			font-size: 0.9rem;
+			font-weight: 600;
+			color: #7f3023;
+		}
+
+		.contact-link {
+			font-size: 1rem;
+			color: var(--button-bg);
+			text-decoration: none;
+			word-break: break-all;
+			transition: color 240ms ease;
+		}
+
+		.contact-link:hover {
+			color: var(--ink);
+			text-decoration: underline;
+		}
+
+		.social-qr-grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 1.5rem;
+			margin-bottom: 1.5rem;
+		}
+
+		.qr-item {
+			text-align: center;
+			cursor: pointer;
+			transition: transform 240ms ease, filter 240ms ease;
+		}
+
+		.qr-item:hover {
+			transform: scale(1.05);
+			filter: brightness(1.1);
+		}
+
+		.qr-item img {
+			width: 100%;
+			max-width: 150px;
+			margin: 0 auto;
+			display: block;
+			border: 2px solid var(--ink);
+			border-radius: 8px;
+			margin-bottom: 0.8rem;
+		}
+
+		.qr-item p {
+			font-size: 0.9rem;
+			color: var(--ink);
+			font-weight: 600;
+		}
+
+		.qr-note {
+			font-size: 0.85rem;
+			color: #999;
+			text-align: center;
+			margin-top: 1rem;
+		}
+
+		@media (max-width: 768px) {
+			.contact-direct-content {
+				grid-template-columns: 1fr;
+				gap: 2rem;
+			}
+
+			.contact-direct-info,
+			.contact-direct-social {
+				padding: 1.5rem;
+			}
+
+			.social-qr-grid {
+				grid-template-columns: 1fr 1fr;
+				gap: 1rem;
+			}
+
+			.qr-item img {
+				max-width: 120px;
+			}
+		}
+
+		@media (max-width: 420px) {
+			.contact-direct-header h2 {
+				font-size: 1.5rem;
+			}
+
+			.contact-direct-header p {
+				font-size: 0.9rem;
+			}
+
+			.contact-direct-info,
+			.contact-direct-social {
+				padding: 1rem;
+			}
+
+			.contact-item {
+				margin-bottom: 1rem;
+			}
+
+			.contact-link {
+				font-size: 0.9rem;
+			}
+
+			.qr-item img {
+				max-width: 100px;
+			}
+
+			.qr-note {
+				font-size: 0.75rem;
+			}
+		}
+
 
 		.contact-section {
 			background: #8f0000;
@@ -1552,6 +1723,7 @@
 					<li><a href="#about">About</a></li>
 					<li><a href="#education">Education</a></li>
 					<li><a href="#experience">Experience</a></li>
+					<li><a href="#contact-direct">Contact</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -1693,8 +1865,43 @@
 		</div>
 	</section>
 
+	<section class="contact-direct-section section-anchor" id="contact-direct" aria-label="Direct contact section">
+		<div class="contact-direct-container">
+			<div class="contact-direct-header scroll-reveal">
+				<h2>Contact Us For Website Development</h2>
+				<p>Get in touch directly or follow on social media</p>
+			</div>
 
-	<section class="contact-section section-anchor" id="contact" aria-label="Contact section">
+			<div class="contact-direct-content">
+				<div class="contact-direct-info scroll-reveal">
+					<h3>Direct Contact</h3>
+					<div class="contact-item">
+						<span class="contact-label">📱 Phone:</span>
+						<a href="tel:+917267015041" class="contact-link">+91 7267015041</a>
+					</div>
+					<div class="contact-item">
+						<span class="contact-label">📧 Email:</span>
+						<a href="mailto:abhayrajtyagi207@gmail.com" class="contact-link">abhayrajtyagi207@gmail.com</a>
+					</div>
+				</div>
+
+				<div class="contact-direct-social scroll-reveal delay-1">
+					<h3>Follow Me On Social Media</h3>
+					<div class="social-qr-grid">
+						<div class="qr-item" id="whatsappQr">
+							<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='white'/%3E%3Ccircle cx='50' cy='50' r='40' fill='none' stroke='%2325D366' stroke-width='2'/%3E%3Cpath d='M30 50 Q50 35 70 50 Q50 65 30 50' fill='%2325D366'/%3E%3C/svg%3E" alt="WhatsApp QR Code">
+							<p>WhatsApp</p>
+						</div>
+						<div class="qr-item" id="instagramQr">
+							<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='white'/%3E%3Crect x='20' y='20' width='60' height='60' fill='none' stroke='%23E1306C' stroke-width='2' rx='10'/%3E%3Ccircle cx='50' cy='50' r='12' fill='none' stroke='%23E1306C' stroke-width='2'/%3E%3Ccircle cx='65' cy='35' r='3' fill='%23E1306C'/%3E%3C/svg%3E" alt="Instagram QR Code">
+							<p>Instagram</p>
+						</div>
+					</div>
+					<p class="qr-note">Click on the icons to open on your phone</p>
+				</div>
+			</div>
+		</div>
+	</section>
 		<div class="contact-top">
 			<h2 class="contact-heading">Do you want to know more about me?</h2>
 			<div class="backend-status" id="backendStatus" aria-live="polite">
@@ -2043,6 +2250,25 @@
 				document.body.removeChild(link);
 			});
 		});
+
+		// Social media QR code handlers
+		const whatsappQr = document.getElementById("whatsappQr");
+		const instagramQr = document.getElementById("instagramQr");
+
+		if (whatsappQr) {
+			whatsappQr.addEventListener("click", () => {
+				const phoneNumber = "7267015041";
+				const message = "Hi Abhay, I'm interested in discussing website development services.";
+				const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+				window.open(url, "_blank");
+			});
+		}
+
+		if (instagramQr) {
+			instagramQr.addEventListener("click", () => {
+				window.open("https://www.instagram.com/_abhayrajtyagi", "_blank");
+			});
+		}
 
 		// Disable selection and copy interactions site-wide.
 		document.addEventListener("copy", (event) => event.preventDefault());
