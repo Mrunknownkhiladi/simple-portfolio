@@ -819,12 +819,24 @@
 			width: min(1850px, 98vw);
 			margin: 0 auto 2.8rem;
 			padding: clamp(2.4rem, 4vw, 4.3rem) clamp(1.5rem, 5vw, 9rem);
-			background: linear-gradient(135deg, #f5ebbf 0%, #efe2a4 52%, #ebdb95 100%);
+			background: radial-gradient(circle at 8% 10%, #b11212 0%, #930505 45%, #6e0101 100%);
+			position: relative;
+			overflow: hidden;
+		}
+
+		.contact-direct-section::before {
+			content: "";
+			position: absolute;
+			inset: 0;
+			background: linear-gradient(115deg, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0.06) 45%, rgba(255, 255, 255, 0.18) 100%);
+			pointer-events: none;
 		}
 
 		.contact-direct-container {
 			max-width: 1200px;
 			margin: 0 auto;
+			position: relative;
+			z-index: 1;
 		}
 
 		.contact-direct-header {
@@ -834,14 +846,15 @@
 
 		.contact-direct-header h2 {
 			font-size: clamp(1.8rem, 3vw, 2.8rem);
-			color: var(--ink);
+			color: #fff8ec;
 			margin-bottom: 0.8rem;
 			font-weight: 700;
+			text-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 		}
 
 		.contact-direct-header p {
 			font-size: 1.1rem;
-			color: #7f3023;
+			color: rgba(255, 248, 236, 0.9);
 		}
 
 		.contact-direct-content {
@@ -853,16 +866,19 @@
 
 		.contact-direct-info,
 		.contact-direct-social {
-			background: white;
+			background: rgba(255, 255, 255, 0.18);
 			padding: 2rem;
-			border-radius: 8px;
-			box-shadow: 0 4px 12px rgba(125, 0, 0, 0.08);
+			border-radius: 14px;
+			border: 1px solid rgba(255, 255, 255, 0.45);
+			box-shadow: 0 14px 30px rgba(35, 0, 0, 0.28);
+			backdrop-filter: blur(10px);
+			-webkit-backdrop-filter: blur(10px);
 		}
 
 		.contact-direct-info h3,
 		.contact-direct-social h3 {
 			font-size: 1.4rem;
-			color: var(--ink);
+			color: #fff8ec;
 			margin-bottom: 1.5rem;
 			font-weight: 600;
 		}
@@ -877,19 +893,20 @@
 		.contact-label {
 			font-size: 0.9rem;
 			font-weight: 600;
-			color: #7f3023;
+			color: rgba(255, 248, 236, 0.88);
 		}
 
 		.contact-link {
 			font-size: 1rem;
-			color: var(--button-bg);
+			color: #fff;
 			text-decoration: none;
 			word-break: break-all;
-			transition: color 240ms ease;
+			transition: color 240ms ease, opacity 240ms ease;
 		}
 
 		.contact-link:hover {
-			color: var(--ink);
+			color: #ffe4d2;
+			opacity: 1;
 			text-decoration: underline;
 		}
 
@@ -923,13 +940,13 @@
 
 		.qr-item p {
 			font-size: 0.9rem;
-			color: var(--ink);
+			color: #fff8ec;
 			font-weight: 600;
 		}
 
 		.qr-note {
 			font-size: 0.85rem;
-			color: #999;
+			color: rgba(255, 248, 236, 0.8);
 			text-align: center;
 			margin-top: 1rem;
 		}
