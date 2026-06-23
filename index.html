@@ -420,8 +420,28 @@
 			gap: 1.5rem;
 		}
 
+		@keyframes glow {
+			0%, 100% {
+				box-shadow: 0 0 8px rgba(125, 0, 0, 0.4), inset 0 0 8px rgba(125, 0, 0, 0.1);
+			}
+			50% {
+				box-shadow: 0 0 16px rgba(125, 0, 0, 0.6), inset 0 0 8px rgba(125, 0, 0, 0.2);
+			}
+		}
+
+		@keyframes blink {
+			0%, 100% {
+				opacity: 1;
+				transform: scale(1);
+			}
+			50% {
+				opacity: 0.8;
+				transform: scale(1.02);
+			}
+		}
+
 		.download-btn-small {
-			border: 1px solid var(--ink);
+			border: 2px solid var(--ink);
 			background: transparent;
 			color: var(--ink);
 			font-family: inherit;
@@ -436,12 +456,16 @@
 			border-radius: 4px;
 			white-space: nowrap;
 			flex-shrink: 0;
+			animation: glow 2s ease-in-out infinite, blink 1.5s ease-in-out infinite;
+			font-weight: 600;
 		}
 
 		.download-btn-small:hover {
 			background: var(--ink);
 			color: var(--bg);
-			transform: translateY(-1px);
+			transform: translateY(-2px);
+			box-shadow: 0 0 20px rgba(125, 0, 0, 0.8), inset 0 0 10px rgba(125, 0, 0, 0.3);
+			animation: none;
 		}
 
 		@media (max-width: 768px) {
