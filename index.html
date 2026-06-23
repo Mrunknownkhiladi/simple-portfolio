@@ -1530,10 +1530,6 @@
 					<li><a href="#experience">Experience</a></li>
 				</ul>
 			</nav>
-
-			<div class="cta-wrap">
-				<button class="download-cv" id="downloadCvBtn" aria-label="Download CV as PDF">Download CV <span aria-hidden="true">↓</span></button>
-			</div>
 		</header>
 
 		<main>
@@ -2004,24 +2000,6 @@
 						submitButton.textContent = "Send Message";
 					}
 				}
-			});
-		}
-
-		// Download CV functionality
-		const downloadCvBtn = document.getElementById("downloadCvBtn");
-		if (downloadCvBtn) {
-			downloadCvBtn.addEventListener("click", () => {
-				const cvUrl = "./cv.pdf";
-				
-				// Create a temporary anchor element to trigger download
-				const link = document.createElement("a");
-				link.href = cvUrl;
-				link.download = "AbhayRaj-CV.pdf";
-				link.style.display = "none";
-				
-				document.body.appendChild(link);
-				link.click();
-				document.body.removeChild(link);
 			});
 		}
 
