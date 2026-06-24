@@ -1321,12 +1321,58 @@
 			border: 1px solid rgba(125, 0, 0, 0.08);
 			padding: 1.5rem;
 			min-height: 260px;
+			transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+			box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+		}
+
+		.project-card:hover,
+		.education-card:hover,
+		.experience-card:hover,
+		.contact-card:hover {
+			transform: translateY(-4px);
+			box-shadow: 0 0 0 1px rgba(125, 0, 0, 0.16), 0 14px 34px rgba(125, 0, 0, 0.18);
+			border-color: rgba(125, 0, 0, 0.28);
+			background: linear-gradient(135deg, rgba(255, 246, 226, 0.98) 0%, rgba(255, 255, 255, 0.94) 100%);
+		}
+
+		.education-card:hover .education-year,
+		.education-card:hover h3,
+		.education-card:hover p,
+		.education-card:hover li {
+			color: #5f0000;
 		}
 
 		.project-card {
 			display: grid;
 			align-content: space-between;
 			gap: 1.25rem;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.project-card .project-popup {
+			position: absolute;
+			inset: auto 1rem 1rem auto;
+			background: rgba(125, 0, 0, 0.92);
+			color: #fff8ec;
+			padding: 0.45rem 0.7rem;
+			border-radius: 999px;
+			font-size: 0.8rem;
+			font-weight: 700;
+			letter-spacing: 0.12em;
+			text-transform: uppercase;
+			opacity: 0;
+			transform: translateY(6px);
+			pointer-events: none;
+			transition: opacity 0.2s ease, transform 0.2s ease;
+			box-shadow: 0 10px 24px rgba(125, 0, 0, 0.2);
+		}
+
+		.project-card:hover .project-popup,
+		.project-card:focus-within .project-popup,
+		.project-card.touch-active .project-popup {
+			opacity: 1;
+			transform: translateY(0);
 		}
 
 		.education-card {
@@ -1927,40 +1973,45 @@
 		</div>
 
 		<div class="project-grid">
-			<article class="project-card scroll-reveal">
+			<article class="project-card scroll-reveal" tabindex="0">
 				<div class="project-thumb" aria-hidden="true"></div>
+				<span class="project-popup">Coming Soon</span>
 				<div>
 					<div class="project-meta">Web Project</div>
 					<h3 class="project-title">Spotify Clone</h3>
 					<p class="project-copy">A responsive music streaming-inspired UI built to practice modern front-end layout and interactive design.</p>
 				</div>
 			</article>
-			<article class="project-card scroll-reveal delay-1">
+			<article class="project-card scroll-reveal delay-1" tabindex="0">
 				<div class="project-thumb" aria-hidden="true"></div>
+				<span class="project-popup">Coming Soon</span>
 				<div>
 					<div class="project-meta">Web Project</div>
 					<h3 class="project-title">Uber Clone</h3>
 					<p class="project-copy">A ride-booking style interface designed to explore user flows, responsive components, and polished UI structure.</p>
 				</div>
 			</article>
-			<article class="project-card scroll-reveal delay-2">
+			<article class="project-card scroll-reveal delay-2" tabindex="0">
 				<div class="project-thumb" aria-hidden="true"></div>
+				<span class="project-popup">Coming Soon</span>
 				<div>
 					<div class="project-meta">IoT Project</div>
 					<h3 class="project-title">Radar System Using Ultrasonic Sensor</h3>
 					<p class="project-copy">An obstacle detection concept using ultrasonic sensing to measure distance and support simple safety applications.</p>
 				</div>
 			</article>
-			<article class="project-card scroll-reveal">
+			<article class="project-card scroll-reveal" tabindex="0">
 				<div class="project-thumb" aria-hidden="true"></div>
+				<span class="project-popup">Coming Soon</span>
 				<div>
 					<div class="project-meta">IoT Project</div>
 					<h3 class="project-title">Blind Stick</h3>
 					<p class="project-copy">A smart mobility aid concept focused on detecting obstacles and improving awareness for safer movement.</p>
 				</div>
 			</article>
-			<article class="project-card scroll-reveal delay-1">
+			<article class="project-card scroll-reveal delay-1" tabindex="0">
 				<div class="project-thumb" aria-hidden="true"></div>
+				<span class="project-popup">Coming Soon</span>
 				<div>
 					<div class="project-meta">IoT Project</div>
 					<h3 class="project-title">Door Lock System</h3>
