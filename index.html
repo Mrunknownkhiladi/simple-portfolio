@@ -266,7 +266,11 @@
     width:100vw; height:100vh;
     z-index:150;
     pointer-events:none;
+    opacity:0;
+    visibility:hidden;
+    transition:opacity .2s ease, visibility 0s linear .2s;
   }
+  #thread-svg.active{opacity:1; visibility:visible; transition-delay:0s;}
   #id-card-outer{
     position:fixed;
     left:0; top:0;
@@ -276,11 +280,16 @@
     touch-action:none;
     -webkit-user-select:none; user-select:none;
     transform:translateY(-140vh) rotate(var(--tilt, 0deg));
-    transition:transform .85s cubic-bezier(.22,.8,.3,1.15);
+    opacity:0;
+    visibility:hidden;
+    transition:transform .85s cubic-bezier(.22,.8,.3,1.15), opacity .2s ease, visibility 0s linear .85s;
     cursor:grab;
   }
   #id-card-outer.open{
     transform:translateY(0) rotate(var(--tilt, 0deg));
+    opacity:1;
+    visibility:visible;
+    transition-delay:0s;
   }
   #id-card-outer.dragging{
     cursor:grabbing;
@@ -706,7 +715,7 @@
     <polyline id="thread-line" points="" fill="none" stroke="#2A2C34" stroke-width="2" stroke-linecap="round"/>
   </svg>
 
-  <div id="id-card-outer">
+  <div id="id-card-outer" aria-hidden="true">
     <div class="id-card" id="id-card">
       <div class="id-card-face front">
         <div class="id-card-hole"></div>
@@ -1173,11 +1182,13 @@
   requestAnimationFrame(loop);
 
   function openCard(){
+    outer.classList.add('open');
+    svg.classList.add('active');
+    outer.setAttribute('aria-hidden', 'false');
     if (isOpen) return;
     isOpen = true;
     var home = homeRect();
     posX = home.left; posY = home.top;
-    outer.classList.add('open');
     if (!reduceMotion){
       swingActive = true;
       swingStart = performance.now() + 400; // let the drop transition finish first
@@ -1185,12 +1196,14 @@
   }
 
   function closeCard(){
-    if (!isOpen) return;
     isOpen = false;
     dragging = false;
     springBack = false;
     swingActive = false;
     outer.classList.remove('open', 'dragging');
+    svg.classList.remove('active');
+    line.setAttribute('points', '');
+    outer.setAttribute('aria-hidden', 'true');
     outer.style.removeProperty('--tilt');
     card.classList.remove('flipped');
   }
@@ -1202,8 +1215,11 @@
   function syncCardVisibility(){
     visibilityFrame = 0;
     var rect = aboutSection.getBoundingClientRect();
+    var scrollY = window.scrollY || document.documentElement.scrollTop || 0;
+    var aboutTop = scrollY + rect.top;
     var viewportCenter = window.innerHeight * 0.5;
-    var aboutIsActive = rect.top <= viewportCenter && rect.bottom >= viewportCenter;
+    var stillOnHero = scrollY < aboutTop - window.innerHeight * 0.35;
+    var aboutIsActive = !stillOnHero && rect.top <= viewportCenter && rect.bottom >= viewportCenter;
     if (aboutIsActive) openCard();
     else closeCard();
   }
@@ -1214,6 +1230,7 @@
   window.addEventListener('scroll', scheduleVisibilitySync, { passive:true });
   window.addEventListener('resize', scheduleVisibilitySync);
   window.addEventListener('pageshow', scheduleVisibilitySync);
+  window.addEventListener('hashchange', scheduleVisibilitySync);
   requestAnimationFrame(syncCardVisibility);
 
   function onPointerDown(e){
